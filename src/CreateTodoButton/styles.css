@@ -1,0 +1,21 @@
+.createTodoButton {
+  border-radius: 100px;
+  border-width: 1px;
+  padding: 0px 12px;
+  font-size: 40px;
+  font-weight: lighter;
+  color: white;
+  background-color: tomato;
+  border-color: tomato;
+  border: none;
+  position: absolute;
+  right: 0;
+  margin-right: 8rem;
+
+  transform: rotate(0);
+  transition: .3s ease;
+}
+
+.createTodoButton:hover{
+  transform: rotate(224deg);
+}

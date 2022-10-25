@@ -1,0 +1,13 @@
+.modalBackground{
+    background-color: rgba(99, 99, 99, 0.438);
+    color: white;
+    font-family: Quicksand;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+}

@@ -1,0 +1,46 @@
+.todoCardCompleted {
+  color: gray;
+  background-color: rgb(233, 233, 233);
+}
+
+.todoCardCompleted > p {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todoCardPending {
+  background-color: powderblue;
+  color: tomato;
+}
+
+.todoCard {
+  font-family: Quicksand;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  min-width: 500px;
+  margin-bottom: 10px;
+}
+
+.todoCard:hover .deleteIcon {
+    visibility: visible;
+}
+
+.todoCardPending > p {
+  color: black;
+}
+
+.actionIcons {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.deleteIcon {
+  visibility: hidden;
+  color: rgb(81, 81, 81);
+}

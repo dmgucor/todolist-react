@@ -1,0 +1,10 @@
+.todoSearch{
+    display: block;
+    margin: 10px auto 30px;
+    font-family: Quicksand;
+    width: 25%;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    font-size: 17px;
+}
