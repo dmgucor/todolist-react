@@ -11,7 +11,7 @@
     bottom: -10px;
 }
 
-h2{
+.modal>h2{
     color: tomato;
     font-weight: 600;
     text-align: center;

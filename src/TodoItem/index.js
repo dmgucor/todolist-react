@@ -10,14 +10,18 @@ function TodoItem({ item, onComplete, onDelete }) {
     onDelete();
   };
 
+  const handleChildElementClick = (e) => {
+    e.stopPropagation();
+  };
   return (
     <div
       className={`todoCard ${
         item.completed === true ? "todoCardCompleted" : "todoCardPending"
       }`}
+      onClick={onCompleteClicked}
     >
       <p>{item.text}</p>
-      <div className="actionIcons">
+      <div className="actionIcons" onClick={(e) => handleChildElementClick(e)}>
         <span
           className="material-symbols-outlined deleteIcon"
           onClick={onDeleteClicked}

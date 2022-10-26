@@ -40,6 +40,10 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.actionIcons>:hover{
+  cursor: pointer;
+}
+
 .deleteIcon {
   visibility: hidden;
   color: rgb(81, 81, 81);

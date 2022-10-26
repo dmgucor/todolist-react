@@ -42,9 +42,13 @@ function Modal({ children }) {
     }
   };
 
+  const handleChildElementClick = (e) => {
+    e.stopPropagation();
+  };
+
   return ReactDOM.createPortal(
-    <div className="modalBackground">
-      <form onSubmit={createTodo}>
+    <div className="modalBackground" onClick={() => setOpenModal(false)}>
+      <form onSubmit={createTodo} onClick={(e) => handleChildElementClick(e)}>
         <div className="modal" autoComplete="off">
           <h2>Add todo</h2>
           <div className="inputForm">

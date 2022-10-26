@@ -11,6 +11,7 @@
   position: absolute;
   right: 0;
   margin-right: 8rem;
+  cursor: pointer;
 
   transform: rotate(0);
   transition: .3s ease;
