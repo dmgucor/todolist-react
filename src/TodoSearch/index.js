@@ -14,6 +14,7 @@ function TodoSearch() {
         className="todoSearch"
         placeholder="onion"
         value={searchValue}
+        maxLength="30"
         onChange={(event) => {
           onSearchChanged(event.target.value);
         }}

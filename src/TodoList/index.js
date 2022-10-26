@@ -34,6 +34,7 @@ function TodoList() {
       {loading && <p>Loading...</p>}
       {!loading && !todos.length && (
         <InfoMessage>
+          <img src="https://bit.ly/3D6w7Xo" alt="man with task list"></img>
           <p>There are no TODOs, create your first one</p>
         </InfoMessage>
       )}
@@ -46,9 +47,11 @@ function TodoList() {
               onDelete={() => deleteItem(item.text)}
             ></TodoItem>
           ))
-        : !loading && (
+        : !loading &&
+          todos.length > 0 && (
             <InfoMessage>
-              <p>No results</p>
+              <img src="https://bit.ly/3TI4wCQ" alt="brain confused"></img>
+              <p>{`Oops! you don't have any todos that match '${searchValue}'`}</p>
             </InfoMessage>
           )}
     </div>

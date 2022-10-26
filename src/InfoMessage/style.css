@@ -1,0 +1,19 @@
+img{
+    height: 25rem;
+    max-width: fit-content;
+    position: static;
+}
+
+p{
+    font-family: Quicksand;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 39rem;
+}
