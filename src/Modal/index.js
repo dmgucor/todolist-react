@@ -46,13 +46,16 @@ function Modal({ children }) {
     <div className="modalBackground">
       <form onSubmit={createTodo}>
         <div className="modal" autoComplete="off">
-          <label htmlFor="inputNewTodo">Add your new Todo</label>
-          <input
-            placeholder="Chop onion"
-            id="inputNewTodo"
-            autoComplete="off"
-            onChange={validateIsNewTodo}
-          ></input>
+          <h2>Add todo</h2>
+          <div className="inputForm">
+            <label htmlFor="inputNewTodo">What are you doing today?</label>
+            <input
+              placeholder="Chop onion"
+              id="inputNewTodo"
+              autoComplete="off"
+              onChange={validateIsNewTodo}
+            ></input>
+          </div>
           <div className="buttonContainer">
             <input
               type="button"
