@@ -2,6 +2,7 @@ import React from "react";
 import { TodoItem } from "../TodoItem";
 import "./styles.css";
 import { TodoContext } from "../TodoContext";
+import { InfoMessage } from "../InfoMessage";
 
 function TodoList() {
   const { searchValue, saveTodos, loading, error, todos } =
@@ -32,16 +33,24 @@ function TodoList() {
       {error && <p>There was an error...</p>}
       {loading && <p>Loading...</p>}
       {!loading && !todos.length && (
-        <p>There are no TODOs, create your first one</p>
+        <InfoMessage>
+          <p>There are no TODOs, create your first one</p>
+        </InfoMessage>
       )}
-      {filteredList.map((item) => (
-        <TodoItem
-          key={item.text}
-          item={item}
-          onComplete={() => completeItem(item.text)}
-          onDelete={() => deleteItem(item.text)}
-        ></TodoItem>
-      ))}
+      {filteredList.length > 0
+        ? filteredList.map((item) => (
+            <TodoItem
+              key={item.text}
+              item={item}
+              onComplete={() => completeItem(item.text)}
+              onDelete={() => deleteItem(item.text)}
+            ></TodoItem>
+          ))
+        : !loading && (
+            <InfoMessage>
+              <p>No results</p>
+            </InfoMessage>
+          )}
     </div>
   );
 }

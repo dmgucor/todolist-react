@@ -12,8 +12,47 @@
     bottom: -10px;
 }
 
+label{
+    color: tomato;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.2rem;
+}
 .modal{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 20rem;
+    height: 8rem;
+    padding: 1.6rem;
+    background-color: rgb(233, 233, 233);
+}
 
+#inputNewTodo{
+    border-style: solid;
+    border-color: gray;
+    border-radius: 10px;
+    outline-color: gray;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonContainer>button,.buttonContainer>input{
+    width: 7rem;
+    height: 1.5rem;
+    font-family: Quicksand;
+    font-weight: 600;
+}
+
+#addTodoButton:disabled{
+    background-color: lightgray;
+}
+
+#addTodoButton:enabled{
+    border-style: solid;
+    border-color: rgb(92, 137, 143);
+    background-color: powderblue;
 }

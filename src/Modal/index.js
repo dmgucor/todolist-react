@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
 import { TodoContext } from "../TodoContext";
 
@@ -7,6 +7,7 @@ function Modal({ children }) {
   const { openModal, setOpenModal, saveTodos, todos } =
     React.useContext(TodoContext);
 
+  const [disable, setDisable] = useState(true);
   const onClickDisplayModal = () => setOpenModal(!openModal);
 
   const createTodo = () => {
@@ -25,18 +26,17 @@ function Modal({ children }) {
     const inputTodo = document.getElementById("inputNewTodo");
     let newTodoText = inputTodo.value;
     newTodoText = newTodoText.trim();
-    const addButton = document.getElementById("addTodoButton");
 
     if (newTodoText === "") {
-      addButton.disabled = true;
+      setDisable(true);
     } else {
       const existsInList = todos.filter((todo) => todo.text === newTodoText);
       if (existsInList.length > 0) {
-        addButton.disabled = true;
+        setDisable(true);
         inputTodo.setCustomValidity("This todo already exists");
         inputTodo.reportValidity();
       } else {
-        addButton.disabled = false;
+        setDisable(false);
         inputTodo.setCustomValidity("");
       }
     }
@@ -44,19 +44,27 @@ function Modal({ children }) {
 
   return ReactDOM.createPortal(
     <div className="modalBackground">
-      <div className="modal" autoComplete="off">
-        <label htmlFor="inputNewTodo">Add your new Todo</label>
-        <input
-          placeholder="Chop onion"
-          id="inputNewTodo"
-          autoComplete="off"
-          onChange={validateIsNewTodo}
-        ></input>
-        <button onClick={onClickDisplayModal}>Cancel</button>
-        <button onClick={createTodo} id="addTodoButton">
-          Add
-        </button>
-      </div>
+      <form onSubmit={createTodo}>
+        <div className="modal" autoComplete="off">
+          <label htmlFor="inputNewTodo">Add your new Todo</label>
+          <input
+            placeholder="Chop onion"
+            id="inputNewTodo"
+            autoComplete="off"
+            onChange={validateIsNewTodo}
+          ></input>
+          <div className="buttonContainer">
+            <input
+              type="button"
+              value={"Cancel"}
+              onClick={onClickDisplayModal}
+            />
+            <button id="addTodoButton" disabled={disable}>
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
     </div>,
     document.getElementById("modal")
   );
