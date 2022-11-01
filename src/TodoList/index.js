@@ -21,13 +21,6 @@ function TodoList() {
     saveTodos(newTodos);
   };
 
-  const deleteItem = (itemKey) => {
-    const indexItem = todos.findIndex((todo) => todo.text === itemKey);
-    const newTodos = [...todos];
-    newTodos.splice(indexItem, 1);
-    saveTodos(newTodos);
-  };
-
   return (
     <div className="todoList">
       {error && <p>There was an error...</p>}
@@ -44,7 +37,6 @@ function TodoList() {
               key={item.text}
               item={item}
               onComplete={() => completeItem(item.text)}
-              onDelete={() => deleteItem(item.text)}
             ></TodoItem>
           ))
         : !loading &&

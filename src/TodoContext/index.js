@@ -17,6 +17,9 @@ function TodoProvider(props) {
   const totalTodos = todos.length;
 
   const [openModal, setOpenModal] = React.useState(false);
+  const [openModalAddItem, setOpenModalAddItem] = React.useState(false);
+  const [openModalDeleteItem, setOpenModalDeleteItem] = React.useState(false);
+  const [todoToDelete, setTodoToDelete] = React.useState("");
 
   return (
     <TodoContext.Provider
@@ -29,8 +32,14 @@ function TodoProvider(props) {
         setSearchValue,
         todos,
         saveTodos,
+        openModalAddItem,
+        setOpenModalAddItem,
+        openModalDeleteItem,
+        setOpenModalDeleteItem,
         openModal,
         setOpenModal,
+        todoToDelete,
+        setTodoToDelete,
       }}
     >
       {props.children}

@@ -1,0 +1,76 @@
+.modalBackground{
+    background-color: rgba(32,35,41,.8);
+    font-family: Quicksand;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+}
+
+.modal>h2{
+    color: tomato;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 22rem;
+    height: 15rem;
+    padding: .5rem 1.8rem;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+}
+
+.inputForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+
+#inputNewTodo{
+    border-style: solid;
+    border-color: gray;
+    border-radius: 10px;
+    outline-color: gray;
+    margin-top: .5rem;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonContainer>button,.buttonContainer>input{
+    width: 7rem;
+    height: 1.7rem;
+    font-family: Quicksand;
+    font-weight: 600;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: gray;
+    cursor: pointer;
+}
+
+.buttonContainer>button:hover,.buttonContainer>input:hover{
+    box-shadow: 5px 5px 10px #888888;
+}
+
+#addTodoButton:disabled{
+    background-color: lightgray;
+    box-shadow: none;
+}
+
+#addTodoButton:enabled{
+    border-style: solid;
+    border-color: rgb(92, 137, 143);
+    background-color: powderblue;
+}

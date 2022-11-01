@@ -1,13 +1,24 @@
 import React from "react";
 import "./styles.css";
+import { TodoContext } from "../TodoContext";
 
-function TodoItem({ item, onComplete, onDelete }) {
+function TodoItem({ item, onComplete }) {
+  const {
+    openModalDeleteItem,
+    setOpenModalDeleteItem,
+    openModal,
+    setOpenModal,
+    setTodoToDelete,
+  } = React.useContext(TodoContext);
+
   const onCompleteClicked = () => {
     onComplete();
   };
 
   const onDeleteClicked = () => {
-    onDelete();
+    setOpenModal(!openModal);
+    setOpenModalDeleteItem(!openModalDeleteItem);
+    setTodoToDelete(item.text);
   };
 
   const handleChildElementClick = (e) => {
