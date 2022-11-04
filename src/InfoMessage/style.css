@@ -1,10 +1,10 @@
-img{
-    height: 25rem;
-    max-width: fit-content;
-    position: static;
+.infoContainer>img{
+    height: auto;
+    max-width: 420px;
+    width: 100%;
 }
 
-p{
+.infoContainer>p{
     font-family: Quicksand;
     font-size: 1.3rem;
     text-align: center;
@@ -15,5 +15,5 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 39rem;
+    width: 100%;
 }

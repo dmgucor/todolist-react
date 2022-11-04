@@ -56,9 +56,13 @@ function ModalAddTodo() {
   };
 
   return (
-    <form onSubmit={createTodo} onClick={(e) => handleChildElementClick(e)}>
-      <div className="modal" autoComplete="off">
-        <h2>Add todo</h2>
+    <div
+      className="modal"
+      autoComplete="off"
+      onClick={(e) => handleChildElementClick(e)}
+    >
+      <h2>Add todo</h2>
+      <form onSubmit={createTodo}>
         <div className="inputForm">
           <label htmlFor="inputNewTodo">What are you doing today?</label>
           <input
@@ -74,8 +78,8 @@ function ModalAddTodo() {
             Add
           </button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

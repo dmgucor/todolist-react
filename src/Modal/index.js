@@ -4,10 +4,17 @@ import "./Modal.css";
 import { TodoContext } from "../TodoContext";
 
 function Modal({ children }) {
-  const { setOpenModal } = React.useContext(TodoContext);
+  const { setOpenModal, setOpenModalDeleteItem, setOpenModalAddItem } =
+    React.useContext(TodoContext);
+
+  const onClickExitModal = () => {
+    setOpenModal(false);
+    setOpenModalDeleteItem(false);
+    setOpenModalAddItem(false);
+  };
 
   return ReactDOM.createPortal(
-    <div className="modalBackground" onClick={() => setOpenModal(false)}>
+    <div className="modalBackground" onClick={onClickExitModal}>
       {children}
     </div>,
     document.getElementById("modal")

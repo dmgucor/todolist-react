@@ -36,20 +36,16 @@ function ModalDeleteTodo() {
   };
 
   return (
-    <form onClick={(e) => handleChildElementClick(e)}>
-      <div className="modal" autoComplete="off">
-        <h2>Are you sure?</h2>
-        <div className="inputForm">
-          <p>This todo will be deleted.</p>
-        </div>
-        <div className="buttonContainer">
-          <input type="button" value={"Cancel"} onClick={onClickDisplayModal} />
-          <button id="addTodoButton" onClick={onClickDelete}>
-            Yes, delete
-          </button>
-        </div>
+    <div className="modal" onClick={(e) => handleChildElementClick(e)}>
+      <h2>Are you sure?</h2>
+      <p>This todo will be deleted.</p>
+      <div className="buttonContainer">
+        <input type="button" value={"Cancel"} onClick={onClickDisplayModal} />
+        <button id="addTodoButton" onClick={onClickDelete}>
+          Yes, delete
+        </button>
       </div>
-    </form>
+    </div>
   );
 }
 
